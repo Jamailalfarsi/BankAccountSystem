@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-public class Customer extends BaseEntity{
+public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
@@ -17,7 +17,5 @@ public class Customer extends BaseEntity{
     String email;
     String phone;
 
-    @ManyToOne
-    @JoinColumn(name = "account_id", referencedColumnName = "id")// defining the foreign key which is ID
-    Account account;
+
 }

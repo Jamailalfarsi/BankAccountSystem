@@ -4,12 +4,11 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.persistence.criteria.CriteriaBuilder;
 
 @Entity
 @Getter
 @Setter
-public class Account extends BaseEntity{
+public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
@@ -17,6 +16,6 @@ public class Account extends BaseEntity{
     Double balance;
 
     @ManyToOne
-    @JoinColumn(name = "transaction_id", referencedColumnName = "id")// defining the foreign key which is ID
-    Transaction transaction;
+    @JoinColumn(name = "customer_id", referencedColumnName = "id")// defining the foreign key which is ID
+    Customer customer;
 }

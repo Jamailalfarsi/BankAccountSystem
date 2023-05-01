@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-public class Loan extends BaseEntity{
+public class Loan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
