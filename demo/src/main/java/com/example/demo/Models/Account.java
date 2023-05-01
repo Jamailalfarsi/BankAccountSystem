@@ -17,6 +17,6 @@ public class Account extends BaseEntity{
     Double balance;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id", referencedColumnName = "id")// defining the foreign key which is ID
-    Customer customer;
+    @JoinColumn(name = "transaction_id", referencedColumnName = "id")// defining the foreign key which is ID
+    Transaction transaction;
 }
