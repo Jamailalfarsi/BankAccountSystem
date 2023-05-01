@@ -12,7 +12,7 @@ public class CreditCard {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
-    String cardNumber;
+    Integer cardNumber;
 
     @ManyToOne
     @JoinColumn(name = "customer_id", referencedColumnName = "id")// defining the foreign key which is ID
