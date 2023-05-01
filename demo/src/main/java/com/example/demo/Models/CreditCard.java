@@ -14,7 +14,7 @@ public class CreditCard extends BaseEntity {
     Integer id;
     String cardNumber;
 
-    @ManyToOne 
+    @ManyToOne
     @JoinColumn(name = "customer_id", referencedColumnName = "id")// defining the foreign key which is ID
     Customer customer;
 
