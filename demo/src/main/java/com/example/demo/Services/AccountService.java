@@ -7,6 +7,8 @@ import com.example.demo.Repositories.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AccountService {
     @Autowired
@@ -19,5 +21,9 @@ public class AccountService {
         account.setUpdatedDate(updatedDate);
         account.setIsActive(isActive);
         accountRepository.save(account);
+    }
+
+    public List<Account> getAllAccounts(){
+        return accountRepository.getAllAccounts();
     }
 }
