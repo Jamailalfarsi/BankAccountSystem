@@ -12,7 +12,7 @@ import java.util.Date;
 @Setter
 @Data
 @Table(name="TransactionAccount")
-public class Transaction {
+public class Transaction extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;

@@ -2,6 +2,7 @@ package com.example.demo.Services;
 
 import com.example.demo.Models.Account;
 import com.example.demo.Models.Customer;
+import com.example.demo.Models.Loan;
 import com.example.demo.Repositories.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class AccountService {
     @Autowired
     AccountRepository accountRepository;
-    public void  createAccountData(Integer accountNum,Double balance) {
+    public void  createAccountData(Integer accountNum, Double balance) {
         Account account=new Account();
         account.setAccountNumber(accountNum);
         account.setBalance(balance);
