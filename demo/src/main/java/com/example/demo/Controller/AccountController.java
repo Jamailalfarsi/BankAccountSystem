@@ -15,8 +15,8 @@ public class AccountController {
     @Autowired
     AccountService accountService;
     @RequestMapping(value = "AccountData" ,method = RequestMethod.POST)
-    public void createAccountData(@RequestParam Integer accountNumber,Double balance ) throws ParseException {
-        accountService.createAccountData(accountNumber,balance);
+    public void createAccountData(@RequestParam Integer accountNumber,Double balance,String createdDate,String updatedDate, Boolean isActive) throws ParseException {
+        accountService.createAccountData(accountNumber,balance,createdDate,updatedDate,isActive);
     }
 
 }
