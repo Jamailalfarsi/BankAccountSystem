@@ -17,7 +17,7 @@ public class Transaction extends BaseEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
     Double amount;
-    Date transactionDate;
+    String transactionDate;
     @ManyToOne
     @JoinColumn(name = "creditCard_id", referencedColumnName = "id")// defining the foreign key which is ID
     CreditCard creditCard;
