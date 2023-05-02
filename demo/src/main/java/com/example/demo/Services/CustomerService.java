@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class CustomerService {
@@ -22,5 +23,9 @@ public class CustomerService {
         customer.setIsActive(isActive);
 
         customerRepository.save(customer);
+    }
+    public List<Customer> getAllCustomers(){
+
+        return customerRepository.getAllCustomers();
     }
 }

@@ -19,7 +19,7 @@ public class CreditCardController {
 
 
     @RequestMapping(value = "CreditCardData", method = RequestMethod.POST)
-    public void createCreditCardData(@RequestParam Integer cardNum) throws ParseException {
-        creditCardService.createCreditCardData(cardNum);
+    public void createCreditCardData(@RequestParam Integer cardNum,String createdDate,String updatedDate, Boolean isActive) throws ParseException {
+        creditCardService.createCreditCardData(cardNum,createdDate,updatedDate,isActive);
     }
 }
