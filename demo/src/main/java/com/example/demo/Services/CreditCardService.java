@@ -23,4 +23,8 @@ public class CreditCardService {
     public List<CreditCard> getAllCreditCards(){
         return creditCardRepository.getAllCreditCards();
     }
+//    public  CreditCard getCreditCardById(Integer id){
+//        return  creditCardRepository.getCreditCardById(id);
+//
+//    }
 }

@@ -1,6 +1,7 @@
 package com.example.demo.Controller;
 
 
+import com.example.demo.Models.Account;
 import com.example.demo.Models.Customer;
 import com.example.demo.Services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,12 @@ public class CustomerController {
     public List<Customer> getAllStudents() {
         List<Customer> customerList = customerService.getAllCustomers();
         return customerList;
+    }
+
+    @RequestMapping(value = "getById")
+    public Customer getCustomerById(@RequestParam Integer id) {
+        Customer customer = customerService.getCustomerById(id);
+        return customer;
     }
 
 

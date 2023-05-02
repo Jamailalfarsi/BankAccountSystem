@@ -1,5 +1,6 @@
 package com.example.demo.Services;
 
+import com.example.demo.Models.Account;
 import com.example.demo.Models.Customer;
 import com.example.demo.Repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,5 +28,10 @@ public class CustomerService {
     public List<Customer> getAllCustomers(){
 
         return customerRepository.getAllCustomers();
+    }
+
+    public Customer getCustomerById(Integer id){
+        return  customerRepository.getCustomerById(id);
+
     }
 }
