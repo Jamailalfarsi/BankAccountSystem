@@ -17,6 +17,7 @@ public class CustomerService {
         customer.setLastName(lName);
         customer.setEmail(email);
         customer.setPhone(phone);
+
         customerRepository.save(customer);
     }
 }
