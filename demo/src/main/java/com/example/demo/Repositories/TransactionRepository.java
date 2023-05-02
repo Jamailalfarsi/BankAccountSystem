@@ -11,7 +11,7 @@ import java.util.List;
 
 @Repository
 public interface TransactionRepository extends CrudRepository<Transaction,Integer> {
-//    @Query(value="SELECT s from Transaction s")
-//    List<Transaction> getAllTransactions();
+    @Query(value="SELECT s from Transaction s")
+    List<Transaction> getAllTransactions();
 
 }
