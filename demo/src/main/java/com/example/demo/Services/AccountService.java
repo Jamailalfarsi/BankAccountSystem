@@ -11,10 +11,13 @@ import org.springframework.stereotype.Service;
 public class AccountService {
     @Autowired
     AccountRepository accountRepository;
-    public void  createAccountData(Integer accountNum, Double balance) {
+    public void  createAccountData(Integer accountNum, Double balance,String createdDate,String updatedDate, Boolean isActive) {
         Account account=new Account();
         account.setAccountNumber(accountNum);
         account.setBalance(balance);
+        account.setCreatedDate(createdDate);
+        account.setUpdatedDate(updatedDate);
+        account.setIsActive(isActive);
         accountRepository.save(account);
     }
 }
