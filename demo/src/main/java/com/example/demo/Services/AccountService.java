@@ -6,6 +6,8 @@ import com.example.demo.Models.Loan;
 import com.example.demo.Repositories.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -25,5 +27,9 @@ public class AccountService {
 
     public List<Account> getAllAccounts(){
         return accountRepository.getAllAccounts();
+    }
+    public  Account getAccountById(Integer id){
+        return  accountRepository.getAccountById(id);
+
     }
 }

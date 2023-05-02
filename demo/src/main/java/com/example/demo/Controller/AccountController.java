@@ -26,6 +26,11 @@ public class AccountController {
         List<Account> accountList = accountService.getAllAccounts();
         return accountList;
     }
+    @RequestMapping(value = "getById")
+    public Account getAccountById(@RequestParam Integer id) {
+        Account account = accountService.getAccountById(id);
+        return account;
+    }
 
 
 
