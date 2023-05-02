@@ -26,7 +26,7 @@ public class CreditCardController {
         creditCardService.createCreditCardData(cardNum,createdDate,updatedDate,isActive);
     }
     @RequestMapping(value = "getAll")
-    public List<CreditCard> getAllAccounts(){
+    public List<CreditCard> getAllCreditCards(){
         List<CreditCard> creditCardList = creditCardService.getAllCreditCards();
         return creditCardList;
     }

@@ -6,6 +6,8 @@ import com.example.demo.Repositories.LoanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class LoanService {
     @Autowired
@@ -18,5 +20,8 @@ public class LoanService {
         loan.setUpdatedDate(updatedDate);
         loan.setIsActive(isActive);
         loanRepository.save(loan);
+    }
+    public List<Loan> getAllLoans(){
+        return loanRepository.getAllLoans();
     }
 }
