@@ -6,6 +6,8 @@ import com.example.demo.Repositories.CreditCardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CreditCardService {
     @Autowired
@@ -17,5 +19,8 @@ public class CreditCardService {
         creditCard.setUpdatedDate(updatedDate);
         creditCard.setIsActive(isActive);
         creditCardRepository.save(creditCard);
+    }
+    public List<CreditCard> getAllCreditCards(){
+        return creditCardRepository.getAllCreditCards();
     }
 }

@@ -26,11 +26,7 @@ public class AccountController {
         List<Account> accountList = accountService.getAllAccounts();
         return accountList;
     }
-    @RequestMapping(value = "getAll")
-    public List<Account> getAllCustomers(){
-        List<Account> accountList = accountService.getAllAccounts();
-        return accountList;
-    }
+
 
 
 
