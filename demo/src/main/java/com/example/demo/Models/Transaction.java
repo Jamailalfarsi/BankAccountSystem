@@ -19,6 +19,6 @@ public class Transaction extends BaseEntity{
     Double amount;
     Date transactionDate;
     @ManyToOne
-    @JoinColumn(name = "account_id", referencedColumnName = "id")// defining the foreign key which is ID
-    Account account;
+    @JoinColumn(name = "creditCard_id", referencedColumnName = "id")// defining the foreign key which is ID
+    CreditCard creditCard;
 }
