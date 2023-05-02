@@ -11,7 +11,7 @@ import java.util.Date;
 public class CustomerService {
     @Autowired
     CustomerRepository customerRepository;
-    public void  createCustomer(String fName,String lName ,String email,String phone,Date createdDate,Date updatedDate, Boolean isActive) {
+    public void  createCustomer(String fName,String lName ,String email,String phone,String createdDate,String updatedDate, Boolean isActive) {
         Customer customer=new Customer();
         customer.setFirstName(fName);
         customer.setLastName(lName);

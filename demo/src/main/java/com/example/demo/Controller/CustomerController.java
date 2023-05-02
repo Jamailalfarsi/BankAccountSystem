@@ -18,7 +18,7 @@ public class CustomerController {
     @Autowired
     CustomerService customerService;
     @RequestMapping(value = "CustomerData" ,method = RequestMethod.POST)
-    public void createCustomer(@RequestParam String fName, String lName , String email, String phone, Date createdDate, Date updatedDate, Boolean isActive) throws ParseException {
+    public void createCustomer(@RequestParam String fName, String lName , String email, String phone, String createdDate, String updatedDate, Boolean isActive) throws ParseException {
         customerService.createCustomer(fName, lName, email, phone,createdDate,updatedDate,isActive);
     }
 
