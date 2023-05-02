@@ -24,4 +24,8 @@ public class LoanService {
     public List<Loan> getAllLoans(){
         return loanRepository.getAllLoans();
     }
+
+    public Loan getLoanById(Integer id){
+        return  loanRepository.getLoanById(id);
+    }
 }

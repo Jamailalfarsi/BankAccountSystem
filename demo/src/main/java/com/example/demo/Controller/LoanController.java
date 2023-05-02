@@ -29,5 +29,10 @@ public class LoanController {
                 List<Loan> loanList = loanService.getAllLoans();
                 return loanList;
         }
+        @RequestMapping(value = "getById")
+        public Loan getLoanById(@RequestParam Integer id) {
+                Loan loan = loanService.getLoanById(id);
+                return loan;
+        }
 
 }
