@@ -1,5 +1,6 @@
 package com.example.demo.Controller;
 
+import com.example.demo.Models.Account;
 import com.example.demo.Models.Loan;
 import com.example.demo.Models.Transaction;
 import com.example.demo.Services.LoanService;
@@ -27,4 +28,10 @@ public class TransactionController {
         List<Transaction> transactionList = transactionService.getAllTransactions();
         return transactionList;
     }
+
+//    @RequestMapping(value = "getById")
+//    public Transaction getTransactionById(@RequestParam Integer id) {
+//        Transaction transaction = transactionService.getTransactionById(id);
+//        return transaction;
+//    }
 }

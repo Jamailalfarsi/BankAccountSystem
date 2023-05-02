@@ -24,5 +24,8 @@ public class TransactionService {
     public List<Transaction> getAllTransactions(){
         return transactionRepository.getAllTransactions();
     }
+//    public Transaction getTransactionById(Integer id){
+//        return  transactionRepository.getTransactionById(id);
+//    }
 
 }

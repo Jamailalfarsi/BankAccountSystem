@@ -30,4 +30,10 @@ public class CreditCardController {
         List<CreditCard> creditCardList = creditCardService.getAllCreditCards();
         return creditCardList;
     }
+
+//    @RequestMapping(value = "getById")
+//    public CreditCard getCreditCardById(@RequestParam Integer id) {
+//        CreditCard creditCard =creditCardService.getCreditCardById(id);
+//        return creditCard;
+//    }
 }
