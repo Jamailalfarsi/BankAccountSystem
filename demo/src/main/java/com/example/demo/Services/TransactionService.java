@@ -6,6 +6,8 @@ import com.example.demo.Repositories.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TransactionService {
     @Autowired
@@ -18,6 +20,9 @@ public class TransactionService {
         transaction.setUpdatedDate(updatedDate);
         transaction.setIsActive(isActive);
         transactionRepository.save(transaction);
+    }
+    public List<Transaction> getAllTransactions(){
+        return transactionRepository.getAllTransactions();
     }
 
 }
