@@ -10,6 +10,7 @@ import java.util.List;
 
 @Repository
 public interface AccountRepository extends CrudRepository <Account,Integer>{
-    
+    @Query(value = "SELECT s from Account s")
+    List<Account> getAllAccounts();
 
 }
