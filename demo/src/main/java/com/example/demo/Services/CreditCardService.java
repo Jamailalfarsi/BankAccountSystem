@@ -10,9 +10,12 @@ import org.springframework.stereotype.Service;
 public class CreditCardService {
     @Autowired
     CreditCardRepository creditCardRepository;
-    public void  createCreditCardData(Integer cardNum ) {
+    public void  createCreditCardData(Integer cardNum, String createdDate,String updatedDate, Boolean isActive ) {
         CreditCard creditCard=new CreditCard();
         creditCard.setCardNumber(cardNum);
+        creditCard.setCreatedDate(createdDate);
+        creditCard.setUpdatedDate(updatedDate);
+        creditCard.setIsActive(isActive);
         creditCardRepository.save(creditCard);
     }
 }
