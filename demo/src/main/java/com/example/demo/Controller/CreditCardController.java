@@ -36,4 +36,9 @@ public class CreditCardController {
 //        CreditCard creditCard =creditCardService.getCreditCardById(id);
 //        return creditCard;
 //    }
+@RequestMapping(value = "getAllCreditCardByIsActive")
+public List<CreditCard> getAllActiveCreditCards() {
+    List<CreditCard> activeCreditCardsList = creditCardService.getAllActiveCreditCards();
+    return activeCreditCardsList;
+}
 }
