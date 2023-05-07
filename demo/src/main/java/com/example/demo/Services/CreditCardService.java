@@ -31,5 +31,9 @@ public List<CreditCard> getAllActiveCreditCards() {
 
     return creditCardRepository.getAllActiveCreditCards();
 }
+    public List<CreditCard> getAllInActiveCreditCards() {
+
+        return creditCardRepository.getAllInActiveCreditCards();
+    }
 
 }

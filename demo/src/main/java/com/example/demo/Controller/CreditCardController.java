@@ -41,4 +41,9 @@ public List<CreditCard> getAllActiveCreditCards() {
     List<CreditCard> activeCreditCardsList = creditCardService.getAllActiveCreditCards();
     return activeCreditCardsList;
 }
+    @RequestMapping(value = "getAllCreditCardByIsInActive")
+    public List<CreditCard> getAllInActiveCreditCards() {
+        List<CreditCard> activeCreditCardsList = creditCardService.getAllInActiveCreditCards();
+        return activeCreditCardsList;
+    }
 }

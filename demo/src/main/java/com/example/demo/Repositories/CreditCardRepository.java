@@ -18,4 +18,7 @@ public interface CreditCardRepository extends CrudRepository<CreditCard,Integer>
 @Query(value = "SELECT s from CreditCard s where s.isActive = true")
 List<CreditCard> getAllActiveCreditCards();
 
+    @Query(value = "SELECT s from CreditCard s where s.isActive = false")
+    List<CreditCard> getAllInActiveCreditCards();
+
 }
