@@ -35,6 +35,10 @@ public class CustomerController {
         Customer customer = customerService.getCustomerById(id);
         return customer;
     }
+    @RequestMapping(value = "updateCustomerInfo",method = RequestMethod.POST)
+    public void updateCustomer(@RequestParam  Integer id,String email, String phone)throws ParseException {
+        customerService.updateCustomer(id,email,phone);
+    }
 
 
 
