@@ -18,4 +18,5 @@ public class Account extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "customer_id", referencedColumnName = "id")// defining the foreign key which is ID
     Customer customer;
+
 }

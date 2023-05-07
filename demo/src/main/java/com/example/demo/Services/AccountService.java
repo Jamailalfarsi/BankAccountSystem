@@ -3,7 +3,9 @@ package com.example.demo.Services;
 import com.example.demo.Models.Account;
 import com.example.demo.Models.Customer;
 import com.example.demo.Models.Loan;
+import com.example.demo.Models.Transaction;
 import com.example.demo.Repositories.AccountRepository;
+import com.example.demo.Repositories.TransactionRepository;
 import net.sf.jasperreports.engine.JRException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +20,8 @@ import java.util.List;
 public class AccountService {
     @Autowired
     AccountRepository accountRepository;
+    @Autowired
+    TransactionRepository transactionRepository;
 
     public void createAccountData(Integer accountNum, Double balance, String createdDate, String updatedDate, Boolean isActive) {
         Account account = new Account();
@@ -39,15 +43,19 @@ public class AccountService {
     }
 
 //    public String UpdateAccountBalanceWhenTransactionMade() throws FileNotFoundException, JRException {
-//        Account accountBalance= accountRepository
-//
-////        for (Account account : accountList) {
-////            Double balance = account.getBalance();
-//////            Integer balanceAccount = Repository.UpdateAccountBalanceWhenTransactionMade(balance);
-//////            accountList.add(new CourseAverageMarkDTO(courseName, averageMark));
-////            accountRepository.save(account);
-////        }
-//
-//
-//    }
+//        Account accountBalance= accountRepository.getAccountById();
+//        Transaction transaction=transactionRepository
+
+
+//        for (Account account : accountList) {
+//            Double balance = account.getBalance();
+////            Integer balanceAccount = Repository.UpdateAccountBalanceWhenTransactionMade(balance);
+////            accountList.add(new CourseAverageMarkDTO(courseName, averageMark));
+//            accountRepository.save(account);
+//        }
+
+
+    //}
+
+
 }

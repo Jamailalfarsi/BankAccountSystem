@@ -44,4 +44,10 @@ public void updateCustomer(Integer id,String email, String phone){
     customer.setPhone(phone);
     customerRepository.save(customer);
 }
+    public void deleteCustomerById(Integer id){
+        Customer customer = customerRepository.deleteCustomerById(id);
+        customer.setIsActive(false);
+        customerRepository.save(customer);
+    }
+
 }

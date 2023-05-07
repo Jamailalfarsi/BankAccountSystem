@@ -21,4 +21,9 @@ public class Transaction extends BaseEntity{
     @ManyToOne
     @JoinColumn(name = "creditCard_id", referencedColumnName = "id")// defining the foreign key which is ID
     CreditCard creditCard;
+    @ManyToOne
+    @JoinColumn(name = "account_id", referencedColumnName = "id")// defining the foreign key which is ID
+    Account account;
+
+
 }
