@@ -23,6 +23,8 @@ public class AccountService {
     @Autowired
     TransactionRepository transactionRepository;
 
+
+
     public void createAccountData(Integer accountNum, Double balance, String createdDate, String updatedDate, Boolean isActive) {
         Account account = new Account();
         account.setAccountNumber(accountNum);
@@ -41,21 +43,13 @@ public class AccountService {
         return accountRepository.getAccountById(id);
 
     }
+    public Account getAccountBalance(Double balance) {
+        return accountRepository.getAccountBalance(balance);
 
-//    public String UpdateAccountBalanceWhenTransactionMade() throws FileNotFoundException, JRException {
-//        Account accountBalance= accountRepository.getAccountById();
-//        Transaction transaction=transactionRepository
-
-
-//        for (Account account : accountList) {
-//            Double balance = account.getBalance();
-////            Integer balanceAccount = Repository.UpdateAccountBalanceWhenTransactionMade(balance);
-////            accountList.add(new CourseAverageMarkDTO(courseName, averageMark));
-//            accountRepository.save(account);
-//        }
+    }
 
 
-    //}
+
 
 
 }
