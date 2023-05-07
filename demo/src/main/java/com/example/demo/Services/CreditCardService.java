@@ -27,7 +27,9 @@ public class CreditCardService {
 //        return  creditCardRepository.getCreditCardById(id);
 //
 //    }
-//public <CreditCard> getAllActiveCreditCards(){
-//    return CreditCardRepository.getAllActiveCreditCards();
-//}
+public List<CreditCard> getAllActiveCreditCards() {
+
+    return creditCardRepository.getAllActiveCreditCards();
+}
+
 }
