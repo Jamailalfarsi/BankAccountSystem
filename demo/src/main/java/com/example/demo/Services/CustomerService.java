@@ -34,4 +34,15 @@ public class CustomerService {
         return  customerRepository.getCustomerById(id);
 
     }
+
+//    public List<Customer> getByCustomerFirstName(String fName) {
+//        return customerRepository.getByCustomerFirstName(fName);
+//    }
+public void updateCustomer(Integer id,String email, String phone,Boolean isActive){
+    Customer customer =customerRepository.getCustomerById(id);
+    customer.setEmail(email);
+    customer.setPhone(phone);
+    customer.setIsActive(true);
+    customerRepository.save(customer);
+}
 }
