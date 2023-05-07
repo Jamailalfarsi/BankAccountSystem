@@ -32,8 +32,7 @@ public class AccountService {
         return  accountRepository.getAccountById(id);
 
     }
-    public Account getBalance(Integer id){
-        return  accountRepository.getAccountById(id);
 
-    }
+
+
 }

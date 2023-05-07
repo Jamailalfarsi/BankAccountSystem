@@ -16,7 +16,6 @@ public interface AccountRepository extends CrudRepository <Account,Integer>{
 
     @Query (value = "SELECT s from Account s where s.id = :id")
     Account getAccountById(@Param("id")Integer id);
-    @Query (value = "SELECT s from Account s where s.id = :id")
-    Account getBalance(@Param("id")Integer id);
+
 
 }
