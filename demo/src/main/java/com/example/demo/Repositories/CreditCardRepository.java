@@ -15,5 +15,7 @@ public interface CreditCardRepository extends CrudRepository<CreditCard,Integer>
     List<CreditCard> getAllCreditCards();
 //    @Query (value = "SELECT s from CreditCard s where s.id = :id")
 //    Account getCreditCardById(@Param("id")Integer id);
+@Query(value = "SELECT s from CreditCard s where s.isActive = true")
+List<CreditCard> getAllActiveCreditCards();
 
 }
