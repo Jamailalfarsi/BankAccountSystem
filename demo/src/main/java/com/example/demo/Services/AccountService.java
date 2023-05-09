@@ -78,4 +78,11 @@ public class AccountService {
 //
 //        }
 //    }
+
+    public void updateAccount(Integer id,Integer accountNumber, Double balance){
+        Account account =accountRepository.getAccountById(id);
+        account.setAccountNumber(accountNumber);
+        account.setBalance(balance);
+        accountRepository.save(account);
+    }
 }
