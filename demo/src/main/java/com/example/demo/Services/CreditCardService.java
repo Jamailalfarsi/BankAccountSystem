@@ -2,6 +2,7 @@ package com.example.demo.Services;
 
 import com.example.demo.Models.Account;
 import com.example.demo.Models.CreditCard;
+import com.example.demo.Models.Customer;
 import com.example.demo.Repositories.CreditCardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,6 +35,10 @@ public List<CreditCard> getAllActiveCreditCards() {
     public List<CreditCard> getAllInActiveCreditCards() {
 
         return creditCardRepository.getAllInActiveCreditCards();
+    }
+    public void deleteCreditCardById(Integer id){
+        CreditCard creditCardToDelete = creditCardRepository.findById(id).get();
+        creditCardRepository.delete(creditCardToDelete);
     }
 
 }

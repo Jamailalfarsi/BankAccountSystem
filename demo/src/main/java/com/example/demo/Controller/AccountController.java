@@ -4,10 +4,7 @@ import com.example.demo.Models.Account;
 import com.example.demo.Models.Customer;
 import com.example.demo.Services.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.util.List;
@@ -36,7 +33,13 @@ public class AccountController {
         Account account = accountService.getAccountBalance(balance);
         return account;
     }
+    @GetMapping(value = "deleteById")
+    public String deleteAccountById(@RequestParam Integer id) {
 
+        accountService.deleteAccountById(id);
+        return "Record Deleted Successfully :)";
+
+    }
 
 
 

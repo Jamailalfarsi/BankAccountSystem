@@ -48,6 +48,11 @@ public class AccountService {
 
     }
 
+    public void deleteAccountById(Integer id) {
+        Account accountToDelete = accountRepository.findById(id).get();
+        accountRepository.delete(accountToDelete);
+    }
+
     //    public String UpdateAccountBalanceWhenTransactionMade() throws FileNotFoundException, JRException {
 //        List<Account> accountList = accountRepository.getAccountBalance();
 //        List<Transaction> transactionList = transactionRepository.getAllTransactions();
