@@ -5,10 +5,7 @@ import com.example.demo.Models.Account;
 import com.example.demo.Models.Customer;
 import com.example.demo.Services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -39,6 +36,15 @@ public class CustomerController {
     public void updateCustomer(@RequestParam  Integer id,String email, String phone)throws ParseException {
         customerService.updateCustomer(id,email,phone);
     }
+
+    @GetMapping(value = "deleteById")
+    public String deleteCourseById(@RequestParam Integer id) {
+
+        customerService.deleteCustomerById(id);
+        return "Record Deleted Successfully :)";
+
+    }
+
 
 
 
