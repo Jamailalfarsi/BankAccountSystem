@@ -40,5 +40,6 @@ public List<CreditCard> getAllActiveCreditCards() {
         CreditCard creditCardToDelete = creditCardRepository.findById(id).get();
         creditCardRepository.delete(creditCardToDelete);
     }
+    
 
 }
