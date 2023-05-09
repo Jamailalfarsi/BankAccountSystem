@@ -28,4 +28,8 @@ public class LoanService {
     public Loan getLoanById(Integer id){
         return  loanRepository.getLoanById(id);
     }
+    public void deleteLoanById(Integer id){
+        Loan loanToDelete = loanRepository.findById(id).get();
+        loanRepository.delete(loanToDelete);
+    }
 }
