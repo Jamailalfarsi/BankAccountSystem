@@ -6,10 +6,7 @@ import com.example.demo.Models.Transaction;
 import com.example.demo.Services.LoanService;
 import com.example.demo.Services.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.util.List;
@@ -34,4 +31,12 @@ public class TransactionController {
 //        Transaction transaction = transactionService.getTransactionById(id);
 //        return transaction;
 //    }
+   @GetMapping(value = "deleteById")
+   public String deleteTransactionById(@RequestParam Integer id) {
+        transactionService.deleteTransactionById(id);
+    return "Record Deleted Successfully :)";
+
+}
+
+
 }
