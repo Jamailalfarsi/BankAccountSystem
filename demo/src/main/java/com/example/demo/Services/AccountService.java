@@ -24,7 +24,6 @@ public class AccountService {
     TransactionRepository transactionRepository;
 
 
-
     public void createAccountData(Integer accountNum, Double balance, String createdDate, String updatedDate, Boolean isActive) {
         Account account = new Account();
         account.setAccountNumber(accountNum);
@@ -43,13 +42,34 @@ public class AccountService {
         return accountRepository.getAccountById(id);
 
     }
+
     public Account getAccountBalance(Double balance) {
         return accountRepository.getAccountBalance(balance);
 
     }
 
-
-
-
-
+    //    public String UpdateAccountBalanceWhenTransactionMade() throws FileNotFoundException, JRException {
+//        List<Account> accountList = accountRepository.getAccountBalance();
+//        List<Transaction> transactionList = transactionRepository.getAllTransactions();
+//
+//        List<StudentDTO> studentDTOList = new ArrayList<>();
+//        for (Student std : studentList) {
+//            String schoolName = std.getSchool().getName();
+//            String studentName = std.getName();
+//            Integer studentAge = std.getAge();
+//
+//            StudentDTO studentDTO = new StudentDTO(schoolName, studentName, studentAge);
+//            studentDTOList.add(studentDTO);
+//
+//        }
+//    public Account getCalculateInterestOnAccountBalance() {
+//        List<Account> accountList = accountRepository.getAllAccounts();
+//        for (Account account : accountList) {
+//            Double balanceAccount=account.getBalance();
+//            Double interestAccount=0.25*balanceAccount;
+//            account.getInterest();
+//            accountRepository.save(account);
+//
+//        }
+//    }
 }

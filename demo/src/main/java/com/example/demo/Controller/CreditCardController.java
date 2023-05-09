@@ -25,7 +25,7 @@ public class CreditCardController {
     public void createCreditCardData(@RequestParam Integer cardNum,String createdDate,String updatedDate, Boolean isActive) throws ParseException {
         creditCardService.createCreditCardData(cardNum,createdDate,updatedDate,isActive);
     }
-    @RequestMapping(value = "getAll")
+    @RequestMapping(value = "getAll",method = RequestMethod.GET)
     public List<CreditCard> getAllCreditCards(){
         List<CreditCard> creditCardList = creditCardService.getAllCreditCards();
         return creditCardList;
@@ -36,12 +36,12 @@ public class CreditCardController {
 //        CreditCard creditCard =creditCardService.getCreditCardById(id);
 //        return creditCard;
 //    }
-@RequestMapping(value = "getAllCreditCardByIsActive")
+@RequestMapping(value = "getAllCreditCardByIsActive",method = RequestMethod.GET)
 public List<CreditCard> getAllActiveCreditCards() {
     List<CreditCard> activeCreditCardsList = creditCardService.getAllActiveCreditCards();
     return activeCreditCardsList;
 }
-    @RequestMapping(value = "getAllCreditCardByIsInActive")
+    @RequestMapping(value = "getAllCreditCardByIsInActive",method = RequestMethod.GET)
     public List<CreditCard> getAllInActiveCreditCards() {
         List<CreditCard> activeCreditCardsList = creditCardService.getAllInActiveCreditCards();
         return activeCreditCardsList;

@@ -24,13 +24,13 @@ public class CustomerController {
     public void createCustomer(@RequestParam String fName, String lName , String email, String phone, String createdDate, String updatedDate, Boolean isActive) throws ParseException {
         customerService.createCustomer(fName, lName, email, phone,createdDate,updatedDate,isActive);
     }
-    @RequestMapping(value = "getAll")
+    @RequestMapping(value = "getAll",method = RequestMethod.GET)
     public List<Customer> getAllStudents() {
         List<Customer> customerList = customerService.getAllCustomers();
         return customerList;
     }
 
-    @RequestMapping(value = "getById")
+    @RequestMapping(value = "getById",method = RequestMethod.GET)
     public Customer getCustomerById(@RequestParam Integer id) {
         Customer customer = customerService.getCustomerById(id);
         return customer;

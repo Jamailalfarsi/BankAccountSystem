@@ -21,16 +21,23 @@ public class AccountController {
     public void createAccountData(@RequestParam Integer accountNumber,Double balance,String createdDate,String updatedDate, Boolean isActive) throws ParseException {
         accountService.createAccountData(accountNumber,balance,createdDate,updatedDate,isActive);
     }
-    @RequestMapping(value = "getAll")
+    @RequestMapping(value = "getAll",method = RequestMethod.GET)
     public List<Account> getAllAccounts(){
         List<Account> accountList = accountService.getAllAccounts();
         return accountList;
     }
-    @RequestMapping(value = "getById")
+    @RequestMapping(value = "getById",method = RequestMethod.GET)
     public Account getAccountById(@RequestParam Integer id) {
         Account account = accountService.getAccountById(id);
         return account;
     }
+    @RequestMapping(value = "getByBalance",method = RequestMethod.GET)
+    public Account getAccountBalance(@RequestParam Double balance) {
+        Account account = accountService.getAccountBalance(balance);
+        return account;
+    }
+
+
 
 
 

@@ -50,4 +50,9 @@ public void updateCustomer(Integer id,String email, String phone){
 //        customerRepository.save(customer);
 //    }
 
+    public void deleteCustomerById(Integer id){
+        Customer customerToDelete = customerRepository.findById(id).get();
+        customerRepository.delete(customerToDelete);
+    }
+
 }

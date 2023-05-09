@@ -24,12 +24,12 @@ public class LoanController {
         public void createLoanTable(@RequestParam Double amount,Double rate,String createdDate,String updatedDate, Boolean isActive) throws ParseException {
             loanService.createLoanTable(amount, rate,createdDate,updatedDate,isActive);
         }
-        @RequestMapping(value = "getAll")
+        @RequestMapping(value = "getAll",method = RequestMethod.GET)
         public List<Loan> getAllLoans() {
                 List<Loan> loanList = loanService.getAllLoans();
                 return loanList;
         }
-        @RequestMapping(value = "getById")
+        @RequestMapping(value = "getById",method = RequestMethod.GET)
         public Loan getLoanById(@RequestParam Integer id) {
                 Loan loan = loanService.getLoanById(id);
                 return loan;
