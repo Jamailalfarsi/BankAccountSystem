@@ -40,6 +40,11 @@ public class AccountController {
         return "Record Deleted Successfully :)";
 
     }
+    @RequestMapping(value = "updateAccountInfo",method = RequestMethod.POST)
+    public void updateAccount(@RequestParam  Integer id,Integer accountNumber, Double balance)throws ParseException {
+        accountService.updateAccount(id,accountNumber,balance);
+    }
+
 
 
 
