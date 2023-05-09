@@ -1,5 +1,6 @@
 package com.example.demo.Services;
 
+import com.example.demo.Models.Customer;
 import com.example.demo.Models.Loan;
 import com.example.demo.Models.Transaction;
 import com.example.demo.Repositories.TransactionRepository;
@@ -27,5 +28,9 @@ public class TransactionService {
 //    public Transaction getTransactionById(Integer id){
 //        return  transactionRepository.getTransactionById(id);
 //    }
+    public void deleteTransactionById(Integer id){
+    Transaction transactionToDelete = transactionRepository.findById(id).get();
+    transactionRepository.delete(transactionToDelete);
+}
 
 }
