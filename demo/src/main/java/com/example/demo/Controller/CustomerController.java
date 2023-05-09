@@ -38,7 +38,7 @@ public class CustomerController {
     }
 
     @GetMapping(value = "deleteById")
-    public String deleteCourseById(@RequestParam Integer id) {
+    public String deleteLoanById(@RequestParam Integer id) {
 
         customerService.deleteCustomerById(id);
         return "Record Deleted Successfully :)";

@@ -6,10 +6,7 @@ import com.example.demo.Repositories.LoanRepository;
 import com.example.demo.Services.CustomerService;
 import com.example.demo.Services.LoanService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.util.List;
@@ -33,6 +30,13 @@ public class LoanController {
         public Loan getLoanById(@RequestParam Integer id) {
                 Loan loan = loanService.getLoanById(id);
                 return loan;
+        }
+        @GetMapping(value = "deleteById")
+        public String deleteLoanById(@RequestParam Integer id) {
+
+                loanService.deleteLoanById(id);
+                return "Record Deleted Successfully :)";
+
         }
 
 }
