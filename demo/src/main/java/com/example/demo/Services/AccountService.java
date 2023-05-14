@@ -7,7 +7,6 @@ import com.example.demo.Models.Transaction;
 import com.example.demo.Repositories.AccountRepository;
 import com.example.demo.Repositories.CustomerRepository;
 import com.example.demo.Repositories.TransactionRepository;
-import com.example.demo.RequestObject.AccountRequest;
 import net.sf.jasperreports.engine.JRException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,6 +36,19 @@ public class AccountService {
         account.setIsActive(isActive);
         accountRepository.save(account);
     }
+//    public void addAccount(AccountRequest account) {
+//        Double interestVariable = 2.5;
+//        Account accountInfo = new Account();
+//        accountInfo.setAccountNumber(account.getAccountNumber());
+//        accountInfo.setBalance(account.getBalance());
+//        accountInfo.setInterest(account.getBalance() * interestVariable);
+//        Integer id = accountRepository.findIdByPhoneNumber(account.getPhone());
+//        Customer customerId = customerRepository.findById(id).get();
+//        accountInfo.setCustomer(customerId);
+//        accountInfo.setIsActive(account.getIsActive());
+//        accountRepository.save(accountInfo);
+//
+//    }
 
     public List<Account> getAllAccounts() {
         return accountRepository.getAllAccounts();
@@ -90,17 +102,5 @@ public class AccountService {
         accountRepository.save(account);
     }
 
-    public void addAccount(AccountRequest account) {
-        Double interestVariable = 2.5;
-        Account accountInfo = new Account();
-        accountInfo.setAccountNumber(account.getAccountNumber());
-        accountInfo.setBalance(account.getBalance());
-        accountInfo.setInterest(account.getBalance() * interestVariable);
-        Integer id = accountRepository.findIdByPhoneNumber(account.getPhone());
-        Customer customerId = customerRepository.findById(id).get();
-        accountInfo.setCustomer(customerId);
-        accountInfo.setIsActive(account.getIsActive());
-        accountRepository.save(accountInfo);
 
-    }
 }

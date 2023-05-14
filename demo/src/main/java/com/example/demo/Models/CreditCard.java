@@ -19,4 +19,9 @@ public class CreditCard extends BaseEntity {
     @JoinColumn(name = "account_id", referencedColumnName = "id")// defining the foreign key which is ID
     Account account;
 
+//    @ManyToOne
+//    @JoinColumn(name = "customerId", referencedColumnName = "id")
+//    Customer customer; // many account to one customer
+
+
 }
