@@ -2,6 +2,7 @@ package com.example.demo.Controller;
 
 import com.example.demo.Models.Account;
 import com.example.demo.Models.Customer;
+import com.example.demo.RequestObject.AccountRequest;
 import com.example.demo.Services.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,8 @@ import java.util.List;
 public class AccountController {
     @Autowired
     AccountService accountService;
+    @Autowired
+
     @RequestMapping(value = "AccountData" ,method = RequestMethod.POST)
     public void createAccountData(@RequestParam Integer accountNumber,Double balance,String createdDate,String updatedDate, Boolean isActive) throws ParseException {
         accountService.createAccountData(accountNumber,balance,createdDate,updatedDate,isActive);
@@ -45,8 +48,19 @@ public class AccountController {
         accountService.updateAccount(id,accountNumber,balance);
     }
 
+    @RequestMapping(value = "addAccount", method = RequestMethod.POST)
+    public String addAccount(@RequestBody AccountRequest account) {
+        try {
+            accountService.addAccount(account);
+            return "Account added Successfully";
+        } catch (Exception e) {
+            return "Account added Failed";
+        }
 
 
+    }
+
+    
 
 
 
