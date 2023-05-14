@@ -15,7 +15,8 @@ public class Account extends BaseEntity {
     Integer accountNumber;
     Double balance;
 
-    Double interest=0.25;
+    Double interest;
+
 
     @ManyToOne
     @JoinColumn(name = "customer_id", referencedColumnName = "id")// defining the foreign key which is ID
