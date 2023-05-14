@@ -19,5 +19,8 @@ public interface AccountRepository extends CrudRepository <Account,Integer>{
     @Query (value = "SELECT s from Account s where s.balance = :balance")
     Account getAccountBalance(@Param("balance")Double balance);
 
+    @Query(value = "SELECT id FROM customer WHERE phone = :phone", nativeQuery = true)
+    Integer findIdByPhoneNumber(@Param("phone") String phone);
+
 
 }
