@@ -5,6 +5,7 @@ import com.example.demo.Models.Customer;
 import com.example.demo.Models.Loan;
 import com.example.demo.Models.Transaction;
 import com.example.demo.Repositories.AccountRepository;
+import com.example.demo.Repositories.CustomerRepository;
 import com.example.demo.Repositories.TransactionRepository;
 import com.example.demo.RequestObject.AccountRequest;
 import net.sf.jasperreports.engine.JRException;
@@ -23,6 +24,8 @@ public class AccountService {
     AccountRepository accountRepository;
     @Autowired
     TransactionRepository transactionRepository;
+    @Autowired
+    CustomerRepository customerRepository;
 
 
     public void createAccountData(Integer accountNum, Double balance, String createdDate, String updatedDate, Boolean isActive) {
