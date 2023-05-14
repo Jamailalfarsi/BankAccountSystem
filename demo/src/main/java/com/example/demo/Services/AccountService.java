@@ -6,6 +6,7 @@ import com.example.demo.Models.Loan;
 import com.example.demo.Models.Transaction;
 import com.example.demo.Repositories.AccountRepository;
 import com.example.demo.Repositories.TransactionRepository;
+import com.example.demo.RequestObject.AccountRequest;
 import net.sf.jasperreports.engine.JRException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -84,5 +85,19 @@ public class AccountService {
         account.setAccountNumber(accountNumber);
         account.setBalance(balance);
         accountRepository.save(account);
+    }
+
+    public void addAccount(AccountRequest account) {
+        Double interestVariable = 2.5;
+        Account accountInfo = new Account();
+        accountInfo.setAccountNumber(account.getAccountNumber());
+        accountInfo.setBalance(account.getBalance());
+        accountInfo.setInterest(account.getBalance() * interestVariable);
+        Integer id = accountRepository.findIdByPhoneNumber(account.getPhone());
+        Customer customerId = customerRepository.findById(id).get();
+        accountInfo.setCustomer(customerId);
+        accountInfo.setIsActive(account.getIsActive());
+        accountRepository.save(accountInfo);
+
     }
 }
