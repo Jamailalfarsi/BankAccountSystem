@@ -3,6 +3,7 @@ package com.example.demo.Controller;
 import com.example.demo.Models.Account;
 import com.example.demo.Models.Customer;
 import com.example.demo.Services.AccountService;
+import org.eclipse.jdt.internal.compiler.env.IBinaryType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,8 +17,8 @@ public class AccountController {
     AccountService accountService;
 
     @RequestMapping(value = "AccountData" ,method = RequestMethod.POST)
-    public void createAccountData(@RequestParam Integer accountNumber,Double balance,String createdDate,String updatedDate, Boolean isActive) throws ParseException {
-        accountService.createAccountData(accountNumber,balance,createdDate,updatedDate,isActive);
+    public void createAccountData(@RequestParam Integer accountNumber, Double balance, String createdDate, String updatedDate, Boolean isActive, Integer customerId) throws ParseException {
+        accountService.createAccountData(accountNumber,balance,createdDate,updatedDate,isActive,customerId);
         }
     @RequestMapping(value = "getAll",method = RequestMethod.GET)
     public List<Account> getAllAccounts(){

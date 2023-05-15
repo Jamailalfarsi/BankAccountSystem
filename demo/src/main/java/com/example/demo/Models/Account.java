@@ -15,7 +15,7 @@ public class Account extends BaseEntity {
     Integer accountNumber;
     Double balance;
 
-    Double interest;
+    Double interest=2.5;
 
 
     @ManyToOne

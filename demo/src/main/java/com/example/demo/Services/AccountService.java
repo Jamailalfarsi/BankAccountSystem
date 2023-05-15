@@ -27,13 +27,15 @@ public class AccountService {
     CustomerRepository customerRepository;
 
 
-    public void createAccountData(Integer accountNum, Double balance, String createdDate, String updatedDate, Boolean isActive) {
+    public void createAccountData(Integer accountNum, Double balance, String createdDate, String updatedDate, Boolean isActive,Integer customerId) {
         Account account = new Account();
         account.setAccountNumber(accountNum);
         account.setBalance(balance);
         account.setCreatedDate(createdDate);
         account.setUpdatedDate(updatedDate);
         account.setIsActive(isActive);
+        Customer customer_Id=customerRepository.getCustomerById(customerId);
+        account.setCustomer(customer_Id);
         accountRepository.save(account);
     }
 //    public void addAccount(AccountRequest account) {
